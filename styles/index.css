@@ -1,0 +1,114 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.big-container {
+    border: 1px solid transparent !important;
+    width: auto !important;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 500px;
+
+} 
+
+.max-container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mini-container{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    font-size: 3.5rem;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+button:focus{
+    border: none;
+    outline: none;
+}
+button{
+    background-color: black;
+    width: 90px;
+    height: 70px;
+    border: 1px solid transparent;
+    font-size: 1.5rem;
+    color: white;
+}
+.rows{
+    display:  flex;
+
+}
+/* extra small devices */
+@media only screen and (max-width: 575.98px) {
+    .row{
+        flex-direction: row !important;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    .row{
+        flex-direction: row !important;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .row{
+        flex-direction: row !important;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .row{
+        flex-direction: row !important;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .rows {
+        flex-direction: row !important;
+    }
+}
+.special-2{
+    display: flex;
+    justify-content: flex-end;
+    width: 10%;
+}
+.special-2{
+    /* /* display: flex;
+    justify-content: flex-end;  */
+
+    width: 90%;
+} 
+.special-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.special-1{
+    display: flex;
+    justify-content: flex-start;
+    width: 75%;
+}
+.special-2{
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+}

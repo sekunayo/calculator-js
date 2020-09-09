@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+</head>
+
+<body>
+    <div class="big-container">
+        <div class="mini-container " id="display">&nbsp;</div>
+        <div class="max-container ">
+            <div class="special-container">
+                <div class="special-1"></div>
+                <div class="special-2">
+                    <button id="button-clear" onclick="display('AC')">AC</button>
+                </div>
+            </div>
+            <div class="rows">
+                <div class="">
+                    <button id="button-7" class="number" onclick="display(7)">7</button>
+                </div>
+                <div class="">
+                    <button id="button-8" class="number" onclick="display(8)">8</button>
+                </div>
+                <div class="">
+                    <button id="button-9" class="number" onclick="display(9)">9</button>
+                </div>
+            
+                <div class="">
+                    <button id="multiply" onclick="display('*')">*</button>
+                </div>
+            </div>
+            <div class="rows">
+                <div class="">
+                    <button id="button-4" class="number" onclick="display(4)">4</button>
+                </div>
+                <div class="">
+                    <button id="button-5" class="number" onclick="display(5)">5</button>
+                </div>
+                <div class="">
+                    <button id="button-6" class="number" onclick="display(6)">6</button>
+                </div>
+                <div class="">
+                    <button id="division" onclick="display('/')">/</button>
+                </div>
+            </div>
+            <div class="rows">
+                <div class="">
+                    <button id="button-1" class="number" onclick="display(1)">1</button>
+                </div>
+                <div class="">
+                    <button id="button-2" class="number" onclick="display(2)">2</button>
+                </div>
+                <div class="">
+                    <button id="button-3"class="number"  onclick="display(3)">3</button>
+                </div>  
+                <div class="">
+                    <button id="button-minus"class="operator"  onclick="display('-')">-</button>
+                </div>          
+            </div>
+            <div class="rows">
+                <div class="">
+                    <button id="decimal" class="number" onclick="display('.')">.</button>
+                </div>
+                <div class="">
+                    <button id="zero" class="number" onclick="display(0)">0</button>
+                </div>
+                <div class="">
+                    <button id="equal" onclick="display('=')">=</button>
+                </div>
+                <div class="">
+                    <button id="button-plus" class="operator" onclick="display('+')">+</button>
+                </div>          
+                
+            </div>
+        </div>
+    </div>
+<script src="index.js"></script>
+</body>
+
+</html>
