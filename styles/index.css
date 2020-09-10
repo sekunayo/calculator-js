@@ -54,8 +54,6 @@ body {
     flex-direction: column;
     background-color: black;
     height: 500px;
-
-
 } 
 
 .max-container{
@@ -70,10 +68,11 @@ body {
     overflow-x: auto;
     height: auto;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     color: white;
     font-size: 3.5rem;
+    scroll-behavior: smooth;
+    padding : 0 20px;
 }
 ::-webkit-scrollbar {
     width: 10px;
