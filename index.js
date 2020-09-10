@@ -61,7 +61,7 @@ function display(num) {
         }
         for (let i = 0; i < arrays.length; i++) {
             total = arrays[0] / arrays[i];
-            document.getElementById("display").innerHTML = total.toFixed(4);
+            document.getElementById("display").innerHTML = total;
         }
     } 
     else if (num == "=" && arr.includes("/")) {
@@ -73,7 +73,7 @@ function display(num) {
         for (let i = 0; i < arrays.length; i++) {
            let total = arrays[0] / arrays[i];
 
-            document.getElementById("display").innerHTML = total.toFixed(4);
+            document.getElementById("display").innerHTML = total;
         }
     } 
     else if ((num == "=") && (arr.includes("*")) && (arr.includes("."))) {
@@ -85,7 +85,7 @@ function display(num) {
         }
         for (let i = 0; i < arrays.length; i++) {
             total = arrays[0] * arrays[i];
-            document.getElementById("display").innerHTML = total.toFixed(4);
+            document.getElementById("display").innerHTML = total;
         }
     } 
     else if (num == "=" && arr.includes("*")) {
@@ -96,7 +96,7 @@ function display(num) {
         }
         for (let i = 0; i < arrays.length; i++) {
            let total = arrays[0] * arrays[i];
-            document.getElementById("display").innerHTML = total.toFixed(4);
+            document.getElementById("display").innerHTML = total;
         }
     } 
     else {

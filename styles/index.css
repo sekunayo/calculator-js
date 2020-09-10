@@ -66,14 +66,21 @@ body {
 }
 
 .mini-container{
+    width: 350px;
+    overflow-x: auto;
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     color: white;
     font-size: 3.5rem;
 }
-
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-thumb{
+    background-color: black;
+}
 button:focus{
     border: none;
     outline: none;
