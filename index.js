@@ -1,105 +1,86 @@
 function display(num) {
-    var arr = document.getElementById("display").innerText;
+    let arr = document.getElementById("display").innerText;
+    function convertNumbers(Array, cumulator) {
+        for (let i = 0; i < Array.length; i++) {
+            cumulator.push(parseFloat(Array[i]));
+        }
+    }
     if (num == "AC") {
         document.getElementById("display").innerText = 0;
-    }
-    else if ((num == "=") && (arr.includes("+")) && (arr.includes("."))) {
+    } else if ((num == "=") && (arr.includes("+")) && (arr.includes("."))) {
         let array = arr.split("+");
         let arrays = [];
         let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseFloat(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
             total += arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if (num == "=" && arr.includes("+")) {
-
+    } else if (num == "=" && arr.includes("+")) {
         let array = arr.split("+");
         let arrays = [];
         let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseInt(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
             total += arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if ((num == "=") && (arr.includes("-")) && (arr.includes("."))) {
+    } else if ((num == "=") && (arr.includes("-")) && (arr.includes("."))) {
         let array = arr.split("-");
         let arrays = [];
         let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseFloat(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
             total = arrays[0] - arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if (num == "=" && arr.includes("-")) {
+    } else if (num == "=" && arr.includes("-")) {
         let array = arr.split("-");
         let arrays = [];
         let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseInt(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
             total = arrays[0] - arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if ((num == "=") && (arr.includes("/")) && (arr.includes("."))) {
+    } else if ((num == "=") && (arr.includes("/")) && (arr.includes("."))) {
         let array = arr.split("/");
         let arrays = [];
         let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseFloat(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
             total = arrays[0] / arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if (num == "=" && arr.includes("/")) {
+    } else if (num == "=" && arr.includes("/")) {
         let array = arr.split("/");
         let arrays = [];
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseInt(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
-           let total = arrays[0] / arrays[i];
+            let total = arrays[0] / arrays[i];
 
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if ((num == "=") && (arr.includes("*")) && (arr.includes("."))) {
+    } else if ((num == "=") && (arr.includes("*")) && (arr.includes("."))) {
         let array = arr.split("*");
         let arrays = [];
         let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseFloat(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
             total = arrays[0] * arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else if (num == "=" && arr.includes("*")) {
+    } else if (num == "=" && arr.includes("*")) {
         let array = arr.split("*");
         let arrays = [];
-        for (let i = 0; i < array.length; i++) {
-            arrays.push(parseInt(array[i]));
-        }
+        convertNumbers(array, arrays);
         for (let i = 0; i < arrays.length; i++) {
-           let total = arrays[0] * arrays[i];
+            let total = arrays[0] * arrays[i];
             document.getElementById("display").innerHTML = total;
         }
-    } 
-    else {
+    } else {
         document.getElementById("display").innerText = document.getElementById("display").innerText + num;
     }
+    let container = document.getElementById("display");
+    container.scrollLeft = container.scrollWidth;
 }

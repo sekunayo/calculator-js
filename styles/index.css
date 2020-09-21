@@ -67,8 +67,7 @@ body {
     width: 350px;
     overflow-x: auto;
     height: auto;
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
     color: white;
     font-size: 3.5rem;
     scroll-behavior: smooth;
