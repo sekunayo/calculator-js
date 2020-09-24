@@ -5,79 +5,86 @@ function display(num) {
             cumulator.push(parseFloat(Array[i]));
         }
     }
-    if (num == "AC") {
-        document.getElementById("display").innerText = 0;
-    } else if ((num == "=") && (arr.includes("+")) && (arr.includes("."))) {
-        let array = arr.split("+");
-        let arrays = [];
+    Array.prototype.sum = function (){
         let total = 0;
-        convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            total += arrays[i];
+        for (let i = 0; i < this.length; i++) {
+            total += this[i];
             document.getElementById("display").innerHTML = total;
         }
+        return total;
+    }
+    Array.prototype.subtract = function (){
+        let total = 0;
+        for (let i = 0; i < this.length; i++) {
+            total = this[0] - this[i];
+            document.getElementById("display").innerHTML = total;
+        }
+        return total;
+    }
+    Array.prototype.divide = function(){
+        let total = 0;
+        for (let i = 0; i < this.length; i++) {
+            total = this[0] / this[i];
+            document.getElementById("display").innerHTML = total;
+        }
+    }
+    Array.prototype.multiply = function(){
+        let total = 0;
+        for (let i = 0; i < this.length; i++) {
+            total = this[0] * this[i];
+            document.getElementById("display").innerHTML = total;
+        }
+    }
+ 
+    if (num == "AC") {
+        document.getElementById("display").innerText = 0;
+    }
+     else if ((num == "=") && (arr.includes("+")) && (arr.includes("."))) {
+        let array = arr.split("+");
+        let arrays = [];
+        convertNumbers(array, arrays);
+         arrays.sum();
     } else if (num == "=" && arr.includes("+")) {
         let array = arr.split("+");
         let arrays = [];
         let total = 0;
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            total += arrays[i];
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.sum();
+
     } else if ((num == "=") && (arr.includes("-")) && (arr.includes("."))) {
         let array = arr.split("-");
         let arrays = [];
         let total = 0;
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            total = arrays[0] - arrays[i];
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.subtract();
     } else if (num == "=" && arr.includes("-")) {
         let array = arr.split("-");
         let arrays = [];
         let total = 0;
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            total = arrays[0] - arrays[i];
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.subtract();
     } else if ((num == "=") && (arr.includes("/")) && (arr.includes("."))) {
         let array = arr.split("/");
         let arrays = [];
         let total = 0;
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            total = arrays[0] / arrays[i];
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.divide();
     } else if (num == "=" && arr.includes("/")) {
         let array = arr.split("/");
         let arrays = [];
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            let total = arrays[0] / arrays[i];
-
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.divide();
     } else if ((num == "=") && (arr.includes("*")) && (arr.includes("."))) {
         let array = arr.split("*");
         let arrays = [];
         let total = 0;
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            total = arrays[0] * arrays[i];
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.multiply();
     } else if (num == "=" && arr.includes("*")) {
         let array = arr.split("*");
         let arrays = [];
         convertNumbers(array, arrays);
-        for (let i = 0; i < arrays.length; i++) {
-            let total = arrays[0] * arrays[i];
-            document.getElementById("display").innerHTML = total;
-        }
+        arrays.multiply();
     } else {
         document.getElementById("display").innerText = document.getElementById("display").innerText + num;
     }
