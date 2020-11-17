@@ -1,40 +1,29 @@
 function display(num) {
     let arr = document.getElementById("display").innerText;
-    function convertNumbers(Array, cumulator) {
+    let convertNumbers = (Array, cumulator) => {
         for (let i = 0; i < Array.length; i++) {
             cumulator.push(parseFloat(Array[i]));
         }
     }
-    Array.prototype.sum = function (){
-        let total = 0;
-        for (let i = 0; i < this.length; i++) {
-            total += this[i];
-            document.getElementById("display").innerHTML = total;
-        }
-        return total;
+    function add(Array){
+        document.getElementById("display").innerHTML  = Array.reduce( (acc,cu) => acc + cu,0)
     }
-    Array.prototype.subtract = function (){
-        let total = 0;
-        for (let i = 0; i < this.length; i++) {
-            total = this[0] - this[i];
-            document.getElementById("display").innerHTML = total;
-        }
-        return total;
+    function subtract(Array){
+       for(let i = 0; i < Array.length; i++){        
+             document.getElementById("display").innerHTML  = Array[0] - Array[i];
+         }
     }
-    Array.prototype.divide = function(){
-        let total = 0;
-        for (let i = 0; i < this.length; i++) {
-            total = this[0] / this[i];
-            document.getElementById("display").innerHTML = total;
-        }
-    }
-    Array.prototype.multiply = function(){
-        let total = 0;
-        for (let i = 0; i < this.length; i++) {
-            total = this[0] * this[i];
-            document.getElementById("display").innerHTML = total;
-        }
-    }
+    function divide(Array){
+        for(let i = 0; i < Array.length; i++){        
+              document.getElementById("display").innerHTML  = Array[0] / Array[i];
+          }
+     }
+
+     function multiply(Array){
+        for(let i = 0; i < Array.length; i++){        
+              document.getElementById("display").innerHTML  = Array[0] * Array[i];
+          }
+     }
  
     if (num == "AC") {
         document.getElementById("display").innerText = 0;
@@ -43,48 +32,42 @@ function display(num) {
         let array = arr.split("+");
         let arrays = [];
         convertNumbers(array, arrays);
-         arrays.sum();
+         add(arrays);
     } else if (num == "=" && arr.includes("+")) {
         let array = arr.split("+");
         let arrays = [];
-        let total = 0;
         convertNumbers(array, arrays);
-        arrays.sum();
-
+        add(arrays);
     } else if ((num == "=") && (arr.includes("-")) && (arr.includes("."))) {
         let array = arr.split("-");
         let arrays = [];
-        let total = 0;
         convertNumbers(array, arrays);
-        arrays.subtract();
+        subtract(arrays);
     } else if (num == "=" && arr.includes("-")) {
         let array = arr.split("-");
         let arrays = [];
-        let total = 0;
         convertNumbers(array, arrays);
-        arrays.subtract();
+        subtract(arrays);
     } else if ((num == "=") && (arr.includes("/")) && (arr.includes("."))) {
         let array = arr.split("/");
         let arrays = [];
-        let total = 0;
         convertNumbers(array, arrays);
-        arrays.divide();
+        divide(arrays);
     } else if (num == "=" && arr.includes("/")) {
         let array = arr.split("/");
         let arrays = [];
         convertNumbers(array, arrays);
-        arrays.divide();
+        divide(arrays);
     } else if ((num == "=") && (arr.includes("*")) && (arr.includes("."))) {
         let array = arr.split("*");
         let arrays = [];
-        let total = 0;
         convertNumbers(array, arrays);
-        arrays.multiply();
+        multiply(arrays);
     } else if (num == "=" && arr.includes("*")) {
         let array = arr.split("*");
         let arrays = [];
         convertNumbers(array, arrays);
-        arrays.multiply();
+        multiply(arrays);
     } else {
         document.getElementById("display").innerText = document.getElementById("display").innerText + num;
     }
